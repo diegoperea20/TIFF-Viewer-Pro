@@ -73,8 +73,8 @@ A **professional, high-performance TIFF image viewer** built with cutting-edge w
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd <repository-url>
+git clone https://github.com/diegoperea20/TIFF-Viewer-Pro.git
+cd TIFF-Viewer-Pro
 
 # Install dependencies
 npm install
