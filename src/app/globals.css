@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+/* CryptoPoint Color Palette - Dark Mode Theme */
+:root {
+  /* Original CryptoPoint Colors */
+  --cp-dark: #242426;
+  --cp-primary: #1e8c0d;
+  --cp-secondary: #17590c;
+  --cp-accent: #1a4014;
+  --cp-bright: #5fd93d;
+
+  /* Dark Theme variables */
+  --background: linear-gradient(135deg, #0f0f10 0%, #1a4014 50%, #17590c 100%);
+  --background-main: #0f0f10;
+  --background-secondary: #1a1a1c;
+  --foreground: #5fd93d;
+  --foreground-secondary: #e0e0e0;
+  --foreground-muted: #a0a0a0;
+  --card-background: rgba(26, 26, 28, 0.85);
+  --card-background-light: rgba(30, 140, 13, 0.1);
+  --card-border: rgba(95, 217, 61, 0.3);
+  --card-shadow: rgba(95, 217, 61, 0.15);
+  --glass-background: rgba(26, 26, 28, 0.7);
+  --glass-border: rgba(95, 217, 61, 0.2);
+}
+
+@theme inline {
+  --color-background: var(--background-main);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Custom colors for Tailwind */
+  --color-cp-dark: #242426;
+  --color-cp-primary: #1e8c0d;
+  --color-cp-secondary: #17590c;
+  --color-cp-accent: #1a4014;
+  --color-cp-bright: #5fd93d;
+}
+
+body {
+  background: var(--background-main);
+  background-image: radial-gradient(
+      circle at 20% 80%,
+      rgba(30, 140, 13, 0.15) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(95, 217, 61, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(23, 89, 12, 0.1) 0%,
+      transparent 40%
+    );
+  color: var(--foreground);
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  min-height: 100vh;
+}
+
+/* Custom utility classes for Dark Mode */
+.bg-cp-gradient {
+  background: linear-gradient(135deg, #0f0f10 0%, #1a4014 50%, #17590c 100%);
+}
+
+.bg-cp-gradient-card {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 28, 0.9) 0%,
+    rgba(30, 140, 13, 0.05) 100%
+  );
+}
+
+.bg-cp-card {
+  background: var(--card-background);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 8px 32px var(--card-shadow);
+  backdrop-filter: blur(10px);
+}
+
+.bg-cp-glass {
+  background: var(--glass-background);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.text-cp-primary {
+  color: var(--color-cp-primary);
+}
+
+.text-cp-bright {
+  color: var(--color-cp-bright);
+}
+
+.text-cp-dark {
+  color: var(--foreground);
+}
+
+.text-cp-secondary {
+  color: var(--foreground-secondary);
+}
+
+.text-cp-muted {
+  color: var(--foreground-muted);
+}
+
+.border-cp-primary {
+  border-color: var(--color-cp-primary);
+}
+
+.border-cp-bright {
+  border-color: var(--color-cp-bright);
+}
+
+.bg-cp-primary {
+  background-color: var(--color-cp-primary);
+}
+
+.bg-cp-bright {
+  background-color: var(--color-cp-bright);
+}
+
+.bg-cp-secondary {
+  background-color: var(--color-cp-secondary);
+}
+
+.bg-cp-accent {
+  background-color: var(--color-cp-accent);
+}
+
+/* Dark mode specific gradients */
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #0f0f10 0%, #1a1a1c 50%, #242426 100%);
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-cp-secondary) 0%,
+    var(--color-cp-primary) 50%,
+    var(--color-cp-bright) 100%
+  );
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(
+    135deg,
+    var(--color-cp-accent) 0%,
+    var(--color-cp-secondary) 100%
+  );
+}
+
+/* Hover effects for dark mode */
+.hover-cp-bright:hover {
+  background-color: var(--color-cp-bright);
+  color: #0f0f10;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(95, 217, 61, 0.4);
+}
+
+.hover-cp-primary:hover {
+  background-color: var(--color-cp-primary);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(30, 140, 13, 0.4);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(95, 217, 61, 0.3);
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-green {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(95, 217, 61, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(95, 217, 61, 0);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(95, 217, 61, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(95, 217, 61, 0.8), 0 0 30px rgba(95, 217, 61, 0.6);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Scrollbar styling for dark mode */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-cp-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cp-bright);
+}
